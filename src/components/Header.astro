@@ -1,0 +1,12 @@
+---
+import Navbar from "./Navbar.astro";
+
+import logo from "../images/Logo.svg";
+---
+
+<header class="fixed bottom-4 w-screen">
+    <div class="flex grid-cols-3 w-10/12 p-4 m-auto backdrop-blur-3xl bg-white/10 rounded-lg border border-slate-600/50">
+        <img class="mr-4 pr-4 border-r" src={logo} width="120px" alt="CodeNewt Agency Logo">
+        <Navbar />
+    </div>
+</header>
