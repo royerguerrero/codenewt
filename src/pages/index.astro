@@ -3,29 +3,55 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
+import ServiceCard from "../components/ServiceCard.astro";
+
 import logo from "../images/Logo.svg";
 
 const title = "Home";
+const services = [
+	{
+		title: "AI Training and Workshops",
+		emoji: "🧠",
+		resume: "Take the advantage of AI tools",
+		callToAction: "Empower your developers",
+	},
+	{
+		title: "Data Preparation and Management",
+		emoji: "🍄",
+		resume: "Your data quality makes the difference",
+		callToAction: "Get better results",
+	},
+	{
+		title: "Custom AI Development Solutions ",
+		emoji: "🛠️",
+		resume: "Tailored AI solutions for your company",
+		callToAction: "Save time and money",
+	},
+]
 ---
 
 <Layout title={title}>
 	<Header />
-	<section class="m-auto w-10/12 py-8 h-screen">
-		<img src={logo} width="150px" alt="">
-		<div class="rounded-lg border mt-12 p-12 border-slate-600/50 text-center">
-			<h1>Take your vision into a reality and take business to the next level</h1>
-			<div class="grid grid-cols-3">
-				<div>
-					<span>🎯 MVP Devlopment</span>
-				</div>
-
-				<div>
-					<span>🎯 MVP Devlopment</span>
-				</div>
-
-				<div>
-					<span>🎯 MVP Devlopment</span>
-				</div>
+	<section class="m-auto container py-8 h-screen">
+		<div class="flex justify-between">
+			<img src={logo} width="150px" alt="" />
+			<a
+				class="rounded-full py-2 px-4 bg-gradient-to-b from-sky-500 to-blue-800 text-sm"
+			>
+				Start your project
+			</a>
+		</div>
+		<div
+			class="rounded-lg border mt-10 p-12 border-slate-600/50 text-center h-4/5 flex flex-col justify-center"
+		>
+			<h1 class="text-7xl">
+				Take your vision into a <br /> reality and take business <br />
+				 🦄 to the next level 🚀
+			</h1>
+			<div class="grid grid-cols-3 pt-12 gap-4">
+				{services.map((service) => (
+					<ServiceCard title={service.title} emoji={service.emoji} resume={service.resume} callToAction={service.callToAction} />
+				))}
 			</div>
 		</div>
 	</section>

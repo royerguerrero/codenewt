@@ -1,15 +1,24 @@
 ---
+
 ---
 
 <nav class="flex justify-between w-full align-center text-s font-light">
     <ul class="flex gap-4">
-        <li><a class="hover:text-sky-500" href="">Servicios</a></li>
-        <li><a class="hover:text-sky-500" href="">Nuestro Trabajo</a></li>
-        <li><a class="hover:text-sky-500" href="">Contactanos</a></li>
+        {[
+            ['Work', '/dashboard'],
+            ['Blog', '/team'],
+            ['Contact', '/projects'],
+          ].map(([title, url]) => (
+            <a href={url} class="hover:text-sky-400">{title}</a>
+          ))}
     </ul>
     <ul class="flex gap-2">
-        <li><a class="hover:text-sky-500" href="">Twitter</a></li>
-        <li><a class="hover:text-sky-500" href="">Instagram</a></li>
-        <li><a class="hover:text-sky-500" href="">LinkedIn</a></li>
+      {[
+        ['Twitter', '/dashboard'],
+        ['Instagram', '/team'],
+        ['LinkedIn', '/projects'],
+      ].map(([title, url]) => (
+        <a href={url} class="hover:underline">{title}</a>
+      ))}
     </ul>
 </nav>
