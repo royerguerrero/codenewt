@@ -4,9 +4,9 @@ export default {
 	theme: {
 		extend: {
 			backgroundImage: {
-				'dark-radial': 'url("src/images/noise-texture.svg"), radial-gradient(82.81% 82.81% at 50% 6.64%, #323232 0%, #0C0C0C 100%)',
-				'graffiti-bg': 'linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), url("src/images/graffiti.jpeg")',
-				'card-window-actions-decoration': 'url("src/images/card-window-actions-decoration.svg")',
+				'dark-radial': 'url("images/noise-texture.svg"), radial-gradient(82.81% 82.81% at 50% 6.64%, #323232 0%, #0C0C0C 100%)',
+				'graffiti-bg': 'linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), url("images/graffiti.jpeg")',
+				'card-window-actions-decoration': 'url("images/card-window-actions-decoration.svg")',
 				'nitrogen-elipse': 'radial-gradient(52.46% 62.35% at 46.76% 44.91%, #1A93EB 0%, #0632D4 100%)'
 			},
 			colors: {
