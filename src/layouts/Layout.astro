@@ -4,6 +4,14 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+import { getImage } from "astro:assets";
+
+import noiseImage from "../images/noise-texture.svg";
+const noiseTexture = await getImage({
+  src: noiseImage,
+  format: "svg",
+});
 ---
 
 <!doctype html>
@@ -17,6 +25,8 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="bg-dark-radial text-sky-50">
-    <slot />
+    <div style=`background-image: url(${noiseTexture.src})`>
+      <slot />
+    </div>
   </body>
 </html>

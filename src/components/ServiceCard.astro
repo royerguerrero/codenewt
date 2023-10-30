@@ -7,10 +7,18 @@ interface Props {
 }
 
 const { title, emoji, resume, callToAction } = Astro.props;
+
+import { getImage } from "astro:assets";
+import cardDecorationImage from "../images/card-window-actions-decoration.svg";
+
+const cardDecorationBackground = await getImage({
+  src: cardDecorationImage,
+  format: "svg",
+});
 ---
 
 <div class="backdrop-blur-3xl bg-white/10 rounded-lg border border-graphite">
-  <div class="bg-card-window-actions-decoration bg-no-repeat bg-right mr-3">
+  <div class=`bg-no-repeat bg-right mr-3` style=`background-image: url('${cardDecorationBackground.src}')`>
     <h2 class="text-xs text-left px-3 py-2">
       {title}
     </h2>

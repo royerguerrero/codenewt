@@ -7,7 +7,21 @@ import Footer from "../components/Footer.astro";
 
 import ServiceCard from "../components/ServiceCard.astro";
 
+import { getImage } from "astro:assets";
+
 import logo from "../images/Logo.svg";
+import graffitiImage from "../images/graffiti.jpeg";
+import noiseImage from "../images/noise-texture.svg";
+
+const graffitiBackground = await getImage({
+  src: graffitiImage,
+  format: "jpeg",
+});
+
+const noiseTexture = await getImage({
+  src: noiseImage,
+  format: "svg",
+});
 
 const title = "Home";
 const services = [
@@ -44,7 +58,8 @@ const services = [
       </a>
     </div>
     <div
-      class="rounded-lg border mt-10 p-12 border-graphite text-center h-4/5 grid place-items-center bg-graffiti-bg bg-no-repeat bg-cover bg-center"
+      style={`background: linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), url('${graffitiBackground.src}');`}
+      class=`rounded-lg border mt-10 p-12 border-graphite text-center h-4/5 grid place-items-center bg-no-repeat bg-cover bg-center`
     >
       <div class="flex flex-col gap-16">
         <h1 class="text-8xl">
