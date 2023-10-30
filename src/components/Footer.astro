@@ -4,17 +4,17 @@ import logo from "../images/Logo.svg";
 const legallyPages = await Astro.glob("../pages/legally/*md");
 ---
 
-<footer class="container m-auto mb-32">
-  <div class="grid grid-cols-2 mb-12">
+<footer class="container m-auto mb-24 sm:mb-32">
+  <div class="grid sm:grid-cols-2 mb-12 mx-4">
     <div>
-      <Image class="mb-4" src={logo} alt="" />
+      <Image class="mb-4" src={logo} alt="CodeNewt Agency Logo" />
       <p>
         We’r a remote software agency. Care for a not technical or beginners to
         create a own startup or take their business to the next level
       </p>
     </div>
   </div>
-  <div class="flex justify-between">
+  <div class="flex flex-col justify-between text-sm sm:text-base mx-4 gap-2">
     <p>
       Coding and Designed in with <span class="text-lg ml-1 mt-5">☕</span>
     </p>
