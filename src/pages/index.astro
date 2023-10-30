@@ -48,9 +48,9 @@ const services = [
 
 <Layout title={title}>
   <Header />
-  <section class="m-auto container py-8 h-screen relative z-10">
-    <div class="flex justify-between">
-      <Image class="w-40" src={logo} alt="CodeNewt Logo" />
+  <section class="sm:m-auto container py-5 sm:py-8 h-screen relative z-10">
+    <div class="flex justify-between mx-4">
+      <Image class="w-32 sm:w-40 -mt-1" src={logo} alt="CodeNewt Logo" />
       <a
         class="rounded-full py-2 px-4 bg-gradient-to-b from-oxygen to-lapis text-sm"
       >
@@ -58,15 +58,15 @@ const services = [
       </a>
     </div>
     <div
+      class="rounded-lg border mt-8 sm:mt-10 p-12 border-graphite text-center sm:h-4/5 grid place-items-center bg-no-repeat bg-cover bg-center mx-4"
       style={`background: linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), url('${graffitiBackground.src}');`}
-      class=`rounded-lg border mt-10 p-12 border-graphite text-center h-4/5 grid place-items-center bg-no-repeat bg-cover bg-center`
     >
       <div class="flex flex-col gap-16">
-        <h1 class="text-8xl">
+        <h1 class="text-4xl sm:text-8xl">
           Take your vision into a <br /> reality and take business <br />
            🦄 to the next level 🚀
         </h1>
-        <div class="grid grid-cols-3 gap-4 w-9/12 m-auto">
+        <div class="grid sm:grid-cols-3 gap-4 sm:w-9/12 m-auto">
           {
             services.map((service) => (
               <ServiceCard
