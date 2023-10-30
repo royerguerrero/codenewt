@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import logo from "../images/Logo.svg";
+const legallyPages = await Astro.glob("../pages/legally/*md");
+---
+
+<footer class="container m-auto mb-32">
+  <div class="grid grid-cols-2 mb-12">
+    <div>
+      
+      <Image class="mb-4" src={logo} alt="" />
+      <p>
+        We’r a remote software agency. Care for a not technical or beginners to
+        create a own startup or take their business to the next level
+      </p>
+    </div>
+  </div>
+  <div class="flex justify-between">
+    <p>
+      Coding and Designed in with <span class="text-lg ml-1 mt-5">☕</span>
+    </p>
+    <ul class="flex gap-4">
+      {
+        legallyPages.map((page) => (
+          <li>
+            <a class="hover:text-oxygen" href={page.url}>
+              {page.frontmatter.title}
+            </a>
+          </li>
+        ))
+      }
+      <li><a href="/">© CodeNewt 2023</a></li>
+    </ul>
+  </div>
+</footer>

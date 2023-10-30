@@ -1,0 +1,74 @@
+---
+import { Image } from "astro:assets";
+
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+import ServiceCard from "../components/ServiceCard.astro";
+
+import logo from "../images/Logo.svg";
+
+const title = "Home";
+const services = [
+  {
+    title: "AI Training and Workshops",
+    emoji: "🧠",
+    resume: "Take the advantage of AI tools",
+    callToAction: "Empower your developers",
+  },
+  {
+    title: "Data Preparation and Management",
+    emoji: "🍄",
+    resume: "Your data quality makes the difference",
+    callToAction: "Get better results",
+  },
+  {
+    title: "Custom AI Development Solutions ",
+    emoji: "🛠️",
+    resume: "Tailored AI solutions for your company",
+    callToAction: "Save time and money",
+  },
+];
+---
+
+<Layout title={title}>
+  <Header />
+  <section class="m-auto container py-8 h-screen relative z-10">
+    <div class="flex justify-between">
+      <Image class="w-40" src={logo} alt="CodeNewt Logo" />
+      <a
+        class="rounded-full py-2 px-4 bg-gradient-to-b from-oxygen to-lapis text-sm"
+      >
+        Start your project
+      </a>
+    </div>
+    <div
+      class="rounded-lg border mt-10 p-12 border-graphite text-center h-4/5 grid place-items-center bg-graffiti-bg bg-no-repeat bg-cover bg-center"
+    >
+      <div class="flex flex-col gap-16">
+        <h1 class="text-8xl">
+          Take your vision into a <br /> reality and take business <br />
+           🦄 to the next level 🚀
+        </h1>
+        <div class="grid grid-cols-3 gap-4 w-9/12 m-auto">
+          {
+            services.map((service) => (
+              <ServiceCard
+                title={service.title}
+                emoji={service.emoji}
+                resume={service.resume}
+                callToAction={service.callToAction}
+              />
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+  <div
+    class="bg-nitrogen-elipse blur-[100px] h-2/3 absolute top-2/4 left-2/4 z-0 translate-x-[-50%] translate-y-[-50%] w-3/4"
+  >
+  </div>
+  <Footer />
+</Layout>

@@ -1,0 +1,31 @@
+---
+interface Props {
+  title: string;
+  emoji: string;
+  resume: string;
+  callToAction: string;
+}
+
+const { title, emoji, resume, callToAction } = Astro.props;
+---
+
+<div class="backdrop-blur-3xl bg-white/10 rounded-lg border border-graphite">
+  <div class="bg-card-window-actions-decoration bg-no-repeat bg-right mr-3">
+    <h2 class="text-xs text-left px-3 py-2">
+      {title}
+    </h2>
+  </div>
+  <div class="flex p-3 gap-3 justify-center border-t border-graphite">
+    <span class="text-3xl py-2 px-3 bg-white/10 rounded-lg leading-tight"
+      >{emoji}</span
+    >
+    <p class="text-lg text-left leading-tight mt-1">{resume}</p>
+  </div>
+  <div class="border-t border-graphite py-3">
+    <a
+      href=""
+      class="rounded-lg py-2 px-4 bg-gradient-to-b from-oxygen to-lapis text-sm block mx-auto w-4/5"
+      >{callToAction}</a
+    >
+  </div>
+</div>

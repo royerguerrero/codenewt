@@ -1,0 +1,32 @@
+---
+
+---
+
+<nav class="flex justify-between w-full align-center text-s font-light">
+  <ul class="flex gap-4">
+    {
+      [
+        ["Work", "/work"],
+        ["Blog", "/blog"],
+        ["Contact", "/contact"],
+      ].map(([title, url]) => (
+        <a href={url} class="hover:text-oxygen transition-colors duration-300">
+          {title}
+        </a>
+      ))
+    }
+  </ul>
+  <ul class="flex gap-2">
+    {
+      [
+        ["Twitter (𝕏)", "/"],
+        ["Instagram", "https://www.instagram.com/codenewt/"],
+        ["LinkedIn", "/"],
+      ].map(([title, url]) => (
+        <a href={url} class="hover:underline" target="_blank">
+          {title}
+        </a>
+      ))
+    }
+  </ul>
+</nav>
